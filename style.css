@@ -1,0 +1,226 @@
+body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  --text-primary: var(--pink-5);
+  --text-secondary: var(--pink-3);
+  color: var(--text);
+}
+@media (prefers-color-scheme: light) {
+  body {
+    --text-primary: var(--pink-7);
+    --text-secondary: var(--pink-5);
+  }
+}
+
+main {
+  padding: var(--size-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--size-8);
+  height: 100vh;
+  overflow-y: auto;
+}
+
+main > header h1 {
+  color: var(--text);
+}
+p {
+  margin: 0 auto;
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--text-primary) !important;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: var(--size-2);
+  text-align: center;
+}
+
+tr.bold > td {
+  background-color: var(--text-secondary);
+  color: var(--surface-1);
+}
+
+aside {
+  margin-block: var(--size-4);
+  margin-inline-start: var(--size-4);
+  background-color: var(--surface-2);
+  box-shadow: var(--shadow-4);
+  border-radius: var(--radius-3);
+  height: calc(100vh - var(--size-8));
+}
+nav {
+  padding-block: var(--size-8);
+  padding-inline: var(--size-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-6);
+}
+ul {
+  list-style: none;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4);
+}
+li {
+  padding-block: var(--size-2);
+  padding-inline-end: var(--size-8);
+  border-radius: var(--radius-3);
+  display: flex;
+  gap: var(--size-3);
+  align-items: center;
+  color: var(--text-primary);
+}
+li:hover {
+  background-color: var(--surface-3);
+}
+li > span {
+  display: grid;
+  place-items: center;
+  inline-size: 16px;
+  block-size: 16px;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: var(--font-size-fluid-1);
+  color: var(--text-primary);
+}
+a:visited {
+  color: var(--text-primary);
+}
+li.active {
+  background-color: var(--surface-3);
+}
+.nav_title {
+  font-size: var(--font-size-fluid-2);
+}
+.svg_wrapepr {
+  max-width: var(--size-content-3);
+}
+svg #hat {
+  fill: var(--text);
+}
+svg #text {
+  fill: var(--text-primary);
+}
+section {
+  inline-size: 100%;
+}
+form {
+  accent-color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4);
+}
+form fieldset {
+  all: unset;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2);
+}
+input,
+select {
+  max-inline-size: var(--size-content-2);
+  inline-size: var(--size-content-2);
+}
+*:focus-visible {
+  outline-color: var(--text-primary);
+}
+
+button,
+a.btn {
+  padding: var(--size-2) var(--size-4);
+  border-radius: var(--radius-2);
+  color: var(--surface-1);
+  background-color: var(--text-primary);
+  max-inline-size: var(--size-content-2);
+  font-weight: 500;
+}
+
+form button[type='submit'] {
+  margin-block-start: var(--size-6);
+  margin-block-end: 0;
+  margin-inline: auto;
+  inline-size: var(--size-content-2);
+}
+
+a.btn {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: var(--size-4);
+  max-inline-size: max-content;
+  margin-block-start: var(--size-6);
+  margin-inline: auto;
+}
+
+p:is(.error, .success, .warning) {
+  font-size: var(--font-size-fluid-1);
+}
+p.error {
+  color: var(--red-5);
+}
+p.success {
+  color: var(--green-5);
+}
+p.warning {
+  color: var(--yellow-5);
+}
+
+.order_details {
+  display: grid;
+  grid-template-rows: repeat(auto, 3);
+  gap: var(--size-4);
+}
+
+div.details {
+  display: flex;
+  gap: var(--size-4);
+  flex-direction: column;
+  background-color: var(--surface-2);
+  border-radius: var(--radius-2);
+  padding: var(--size-4);
+}
+
+div.detail {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--size-4);
+}
+div.detail > p {
+  text-align: start;
+  inline-size: max-content;
+  margin: unset;
+}
+div.detail > :is(span:last-child, p:last-child) {
+  font-weight: 500;
+  font-size: var(--font-size-3);
+}
+div.total {
+  padding: var(--size-4);
+  background-color: var(--surface-3);
+  font-weight: 500;
+  font-size: var(--font-size-3);
+  border-radius: var(--radius-2);
+}
+div.course {
+  padding-block-end: var(--size-4);
+}
+div.course:not(:last-child) {
+  border-bottom: 1px solid var(--text-secondary);
+}
